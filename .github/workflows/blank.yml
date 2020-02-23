@@ -1,0 +1,17 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install
+      run: yarn --frozen-lockfile
+    - name: Security audit
+      run: yarn --audit
+    - name: Tests
+      run: yarn test
