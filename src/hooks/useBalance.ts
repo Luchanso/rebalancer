@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { createLocalStoreHook } from "./useLocalStore";
 
 export type SingleBalance = {
