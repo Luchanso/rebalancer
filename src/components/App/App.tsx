@@ -3,15 +3,12 @@ import { CreateBalance } from "../CreateBalance/CreateBalance";
 import { useBalance } from "../../hooks/useBalance";
 import { BalanceInput } from "../BalanceInput/BalanceInput";
 import { BalanceRows } from "./styled";
-import { useLocalStore } from "../../hooks/useLocalStore";
 
 function App() {
-  const [initialBalance, setVal] = useLocalStore("balance");
-  const { addBalance, changeBalance, balance } = useBalance(initialBalance);
+  const { addBalance, changeBalance, balance } = useBalance();
 
   function handleChange(id: number, val: number) {
     changeBalance(id, val);
-    setVal(balance);
   }
 
   return (

@@ -1,15 +1,4 @@
-import { useEffect, useState, useReducer } from "react";
-
-export function useLocalStore(key: string) {
-  const initialVal = JSON.parse(localStorage.getItem(key) || "{}");
-  const [val, setVal] = useState(initialVal);
-
-  useEffect(() => {
-    localStorage.setItem(key, JSON.stringify(val));
-  }, [val, key]);
-
-  return [val, setVal];
-}
+import { useEffect, useReducer } from "react";
 
 export function createLocalStoreHook(key: string, initialVal?: string) {
   const listeners: (() => void)[] = [];

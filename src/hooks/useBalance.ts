@@ -12,7 +12,7 @@ export type Balance = {
 const LOCAL_STORE_KEY = "balance";
 const useLocalStore = createLocalStoreHook(LOCAL_STORE_KEY);
 
-export function useBalance(initialBalance: Balance) {
+export function useBalance(initialBalance: Balance = {}) {
   const [storeValue, setStoreValue] = useLocalStore();
   let balance = initialBalance;
 
