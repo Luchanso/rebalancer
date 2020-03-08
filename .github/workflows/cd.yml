@@ -15,5 +15,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install
         run: yarn --frozen-lockfile
-      - name: Deploy
+      - name: setup git
+        run: git remote set-url origin https://${{ GITHUB_ACTOR }}:${{ GITHUB_TOKEN }}@github.com/${{ GITHUB_REPOSITORY }}
+      - name: deploy
         run: yarn deploy
