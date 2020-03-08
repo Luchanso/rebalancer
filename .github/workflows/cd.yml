@@ -16,6 +16,9 @@ jobs:
       - name: Install
         run: yarn --frozen-lockfile
       - name: setup git
-        run: git remote set-url origin https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
+        run: >
+          git remote set-url origin https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
+          git config --global user.email "luchansodev@gmail.com"
+          git config --global user.name "Loutchansky Oleg"
       - name: deploy
         run: yarn deploy
