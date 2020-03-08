@@ -11,5 +11,5 @@ export function BalanceInput({ onChange, balance }: Props) {
     onChange(balance.id, Number(e.target.value));
   }
 
-  return <input onChange={handleChange} type="number" />;
+  return <input onChange={handleChange} value={balance.value} type="number" />;
 }
